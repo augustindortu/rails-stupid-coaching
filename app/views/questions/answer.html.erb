@@ -1,0 +1,24 @@
+<h1>Stupid Coaching</h1>
+
+
+<% if @question == 'I am going to work' %>
+  <% answer = 'Great!' %>
+<% elsif @question.match(/\?/) %>
+  <% answer = 'Silly question, get dressed and go to work!' %>
+<% else %>
+  <% answer = 'I don\'t care, get dressed and go to work!' %>
+<% end %>
+
+<div class="user-question">
+  <p style ="font-weight: bold"><%= @question %></p>
+  <p>- You </p>
+</div>
+
+
+<div class="coach-answer" style="background-color: rgba(252, 227, 174, 0.3)">
+  <p style ="font-weight: bold"><%= answer %></p>
+  <p>- Your coach</p>
+</div>
+
+
+<%= link_to 'Ask a new question', ask_path %>
